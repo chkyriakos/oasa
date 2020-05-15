@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../../partials/header.ejs %>
+</head>
+
+<body>
+    <% include ../../partials/nav.ejs %>
+    <% include ../partials/alerts.ejs %>
+
+
+    <h1>Welcome <%= user.first_name %></h1>
+    <nav aria-label="breadcrumb top-padding bottom-padding">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Αρχική</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Βοήθεια</li>
+        </ol>
+    </nav>
+
+    <div>
+        <h2>Βοήθεια</h2>
+    </div>
+
+
+    <p class="jumbotron text-white">
+
+    </p>
+    <% include ../partials/footer.ejs %>
+</body>
+
+</html>

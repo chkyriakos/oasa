@@ -1,0 +1,10 @@
+<% // console.log(breadcrumbs) %>
+<% if (breadcrumbs) { %>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <% breadcrumbs.forEach((breadcrumb) => { %>
+        <li class="breadcrumb-item"><a href="<%= breadcrumb.url %>"><%= breadcrumb.name %></a></li>
+        <% }) %>
+    </ol>
+</nav>
+<% } %>

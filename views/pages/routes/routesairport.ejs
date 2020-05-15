@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../../partials/header.ejs %>
+</head>
+
+<body>
+
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/breadcrumbs.ejs %>
+    <% include ../../partials/alerts.ejs %>
+    <div class="container top-padding bottom-padding">
+        <div class="jumbotron text-white">
+            <h1 class="display-4">Δρομολόγια Αεροδρoμίου</h1>
+            <hr class="my-4">
+            <p class="lead">Ο Διεθνής Αερολιμένας Αθηνών "Ελευθέριος Βενιζέλος" εξυπηρετείται σε 24ωρη βάση από από όλες τις
+                λεωφορειακές γραμμές EXPRESS. Επίσης εξυπηρετείται από το ΜΕΤΡΟ (
+                <a title="ΗΛΕΚΤΟΝΙΚΗ ΔΙΕΥΘΗΝΣΗ ΜΕΤΡΟ" href="http://www.amel.gr/"
+                    target="_blank">http://www.stasy.gr</a>)
+                και τον ΠΡΟΑΣΤΙΑΚΟ σιδηρόδρομο (<a title="ΗΛΕΚΤΟΝΙΚΗ ΔΙΕΥΘΗΝΣΗ ΠΡΟΑΣΤΙΑΚΟΣ Α.Ε."
+                    href="http://www.trainose.gr/" target="_blank">http://www.trainose.gr</a>).
+                Επιλέξτε τη λεωφορειακή γραμμή που επιθυμείτε και ενημερωθείτε για τα δρομολόγια, τη διαδρομή και τις
+                στάσεις της. </p>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <ul class="list-group">
+                    <% routes.forEach((route) => { %>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="/routes/<%= route.rname %>">
+                            <%= route.rname %>, <%= route.startpoint %> - <%= route.endpoint %>
+                        </a>
+                    </li>
+                    <% }) %>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <% include ../../partials/footer.ejs %>
+
+</body>
+
+</html>

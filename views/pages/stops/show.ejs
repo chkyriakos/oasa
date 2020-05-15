@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../../partials/header.ejs %>
+</head>
+
+<body>
+
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/breadcrumbs.ejs %>
+    <% include ../../partials/alerts.ejs %>
+    <div class="container top-padding bottom-padding">
+        <div class="jumbotron text-white">
+            <h1 class="display-4"><%= stop.sname %></h1>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h2>Δρομολόγια που εξυπηρετούν την στάση:</h2>
+                <ul class="list-group">
+                    <%  stop.routes.forEach((route) => { %>
+                    <li class="list-group-item list-group-item-action">
+                        <% let routeArray = route.split(',')%>
+                        <a href="/routes/<%= routeArray[0] %>">
+                            <%= route %>
+                        </a>
+                    </li>
+                    <% }) %>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+    <% include ../../partials/footer.ejs %>
+
+</body>
+
+</html>

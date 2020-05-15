@@ -1,0 +1,78 @@
+o---------- URL --------------o
+https://oasa.herokuapp.com/
+o-----------------------------o
+
+Github integration:
+https://devcenter.heroku.com/articles/github-integration#manual-deploys
+
+Heroku nodejs:
+https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true
+
+Heroku postgresql:
+https://devcenter.heroku.com/articles/heroku-postgresql#connecting-in-node-js
+
+Deploy form CL:
+https://devcenter.heroku.com/articles/git
+
+Postman requests:
+https://www.taniarascia.com/making-api-requests-postman-curl/
+
+Project baseline:
+https://www.taniarascia.com/node-express-postgresql-heroku/
+
+Log in / sign up:
+https://medium.com/@timtamimi/getting-started-with-authentication-in-node-js-with-passport-and-postgresql-2219664b568c
+
+Session:
+http://expressjs-book.com/index.html%3Fp=128.html
+
+
+o----------o
+:POSTGRESQL:
+o----------o
+
+Installation & Setup:
+https://r00t4bl3.com/post/how-to-install-postgresql-12-on-linux-mint-19-tara-19-1-tessa-19-2-tina-19-3-tricia
+
+
+
+
+COMMANDS
+========
+
+Log into the Heroku PostgreSQL instance:
+heroku pg:psql postgresql-solid-93707 --app oasa
+
+create your table and entries on Heroku Postgres:
+cat migrations/init.sql | heroku pg:psql postgresql-solid-93707 --app oasa
+
+Test and deploy:
+heroku local web
+
+Log in to root user:
+sudo -u postgres psql
+
+Log in to postgres superuser (klaut):
+psql postgres
+
+Log in to oasa_user:
+psql -d postgres -U oasa_user
+
+Connect to database:
+\c database
+
+List users:
+\du
+https://www.postgresqltutorial.com/postgresql-list-users/
+
+List databases:
+\l
+https://www.postgresqltutorial.com/postgresql-show-databases/
+
+Show tables:
+\dt
+https://www.postgresqltutorial.com/postgresql-show-tables/
+
+Show table data:
+TABLE tablename;
+https://stackoverflow.com/questions/26040493/how-to-show-data-in-a-table-by-using-psql-command-line-interface

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../../partials/header.ejs %>
+</head>
+
+<body>
+
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/breadcrumbs.ejs %>
+    <% include ../../partials/alerts.ejs %>
+    <div class="container top-padding bottom-padding">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <%= route.rname %>, <%= route.startpoint %> - <%= route.endpoint %>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Χάρτης</h5>
+                                        <div class="embed-responsive embed-responsive-1by1">
+                                            <iframe class="embed-responsive-item" src="<%= route.map %>" width="600"
+                                                height="450" frameborder="0" style="border:0;"
+                                                allowfullscreen=""></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Στάσεις Δρομολογείου</h5>
+                                        <div class="card">
+                                            <ul class="list-group list-group-flush">
+                                                <%  route.stops.forEach((stop) => { %>
+                                                <li class="list-group-item list-group-item-action">
+                                                    <% let routeArray = stop.split(',')%>
+                                                    <% console.log(routeArray) %>
+                                                    <a href="/stops/<%= routeArray[0] %>">
+                                                        <%= routeArray[1] %>
+                                                    </a>
+                                                </li>
+                                                <% }) %>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% include ../../partials/footer.ejs %>
+
+</body>
+
+</html>

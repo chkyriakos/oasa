@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../../partials/header.ejs %>
+</head>
+
+<body>
+
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/breadcrumbs.ejs %>
+    <% include ../../partials/alerts.ejs %>
+    <div class="container top-padding bottom-padding">
+        <div class="jumbotron text-white">
+                <h1 class="display-4">24ωρα δρομολόγια</h1>
+                <hr class="my-4">
+                <p class="lead">Ο Οργανισμός Αστικών Συγκοινωνιών συνεχίζοντας την προσπάθεια για την καλύτερη
+                    εξυπηρέτηση
+                    του επιβατικού κοινού έχει δημιουργήσει ένα βασικό δίκτυο για την 24-ωρη σύνδεση κομβικών σημείων
+                    του
+                    Λεκανοπεδίου.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <ul class="list-group">
+                    <% routes.forEach((route) => { %>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="/routes/<%= route.rname %>">
+                            <%= route.rname %>, <%= route.startpoint %> - <%= route.endpoint %>
+                        </a>
+                    </li>
+                    <% }) %>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+    <% include ../../partials/footer.ejs %>
+
+</body>
+
+</html>

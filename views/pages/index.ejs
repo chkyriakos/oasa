@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+  <% include ../partials/nav.ejs %>
+  <% include ../partials/alerts.ejs %>
+
+
+  <section class="search-banner text-white py-3  form-background  top-padding bottom-padding" id="search-banner">
+    <div class="container py-5 my-5">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card background-color-form">
+            <div class="card-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-9">
+                    <div class="row">
+                      <div class="col-md-4 search_boxes outline">
+                        <!-- Plan route -->
+                        <h4 style="text-align: center">Βρες διαδρομή</h4>
+
+                        <form action="/routes/plan" method="post">
+                          <div class="form-group">
+                            <label for="input_from">Από:</label>
+                            <input type="text" class="form-control" id="input_from" name="from" placeholder="ΑΠΟ:">
+                          </div>
+                          <div class="form-group">
+                            <label for="input_to">Προς:</label>
+                            <input type="text" class="form-control" id="input_to" name="to" placeholder="ΠΡΟΣ:">
+                          </div>
+                          <button type="submit" class="btn btn-primary">ΑΝΑΖΗΤΗΣΗ</button>
+                        </form>
+                      </div>
+                      <div class="col-md-4 search_boxes outline">
+                        <!-- Find route -->
+                        <h4 style="text-align: center">Βρες την γραμμή σου</h4>
+
+                        <form action="/routes" method="post">
+                          <div class="form-group">
+                            <label for="input_route">Επέλεξε γραμμή:</label>
+                            <input type="text" class="form-control" id="input_route" name="search_route"
+                              placeholder="ΕΠΕΛΕΞΕ ΓΡΑΜΜΗ:">
+                          </div>
+                          <button type="submit" class="btn btn-primary">ΑΝΑΖΗΤΗΣΗ</button>
+                        </form>
+                      </div>
+                      <div class="col-md-4 search_boxes outline">
+                        <!-- Find stop -->
+                        <h4 style="text-align: center">Είμαι στην στάση</h4>
+
+                        <form action="/stops" method="post">
+                          <div class="form-group">
+                            <label for="input_stop">Επέλεξε γραμμή:</label>
+                            <input type="text" class="form-control" id="input_stop" name="search_stop"
+                              placeholder="ΕΠΕΛΕΞΕ ΣΤΑΣΗ:">
+                          </div>
+                          <button type="submit" class="btn btn-primary">ΑΝΑΖΗΤΗΣΗ</button>
+                        </form>
+                      </div>
+                    </div>
+                    <!-- 3 icons -->
+                    <div class="row align-middle text-center">
+                      <div class="col-4 search_boxes outline">
+                        <div class="row ">
+                          <div class="col-12 "><a href="/telematics"><i class="far fa-3x fa-clock"></i></a></div>
+                          <div class="col-12">
+                            <h5>
+                              <a href="/telematics">
+                                Πληροφόρηση σε πραγματικό χρόνο
+                              </a>
+                            </h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 search_boxes outline">
+                        <div class="row">
+                          <div class="col-12"><a href="/maps"><i class="fas fa-3x fa-map-marked-alt"></i></a></div>
+                          <div class="col-12">
+                            <h5>
+                              <a href="/maps">
+                                Χάρτες
+                              </a>
+                            </h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 search_boxes outline">
+                        <div class="row">
+                          <div class="col-12"><a href="/nearby"><i class="fas fa-3x fa-street-view"></i></a></div>
+                          <div class="col-12">
+                            <h5>
+                              <a href="/nearby">
+                                Κοντά μου
+                              </a>
+                            </h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <!-- <div class="col-md-12 bg-warning"> -->
+                    <div class="col-12 outline search_boxes">
+                      <h4 class="text-center"><a href="/news">Ημερίσεις ανακοινώσεις</a></h4>
+                      <p>20.01.20 Προσωρινή τροποποίηση της διαδρομής των λεωφορείων 700, 747 και Α11 λόγω έργων.
+                      </p>
+                    </div>
+                    <div class="col-12 outline search_boxes">
+                      <h4 class="text-center"><a href="/news">Γενικές ανακοινώσεις</a></h4>
+                      <p>14.01.20 Μερική προσωρινή τροποποίηση της λεωφορειακής γραμμής 101 λόγω έργων στο Δήμο Αλίμου.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <% include ../partials/footer.ejs %>
+</body>
+
+</html>

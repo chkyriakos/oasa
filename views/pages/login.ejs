@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+  <% include ../partials/nav.ejs %>
+  <% include ../partials/breadcrumbs.ejs %>
+  <% include ../partials/alerts.ejs %>
+
+  <div class="row top-padding bottom-padding">
+    <div style="width: 30%; margin: 25px auto;">
+      <h1 style="text-align: center">Είσοδος</h1>
+      <form action="/login" method="post">
+        <div class="form-group">
+          <label for="input_email">Email</label>
+          <input type="email" class="form-control" id="input_email" name="email" placeholder="john@doe.com">
+        </div>
+        <div class="form-group">
+          <label for="input_email">Κωδικός πρόσβασης</label>
+          <input type="password" class="form-control" id="input_email" name="password" placeholder="Κωδικός πρόσβασης">
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Είσοδος!</button>
+      </form>
+    </div>
+  </div>
+
+  <% include ../partials/footer.ejs %>
+
+
+</body>
+
+</html>

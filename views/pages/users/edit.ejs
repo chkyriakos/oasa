@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include ../../partials/header.ejs %>
+</head>
+
+<body>
+
+  <% include ../../partials/nav.ejs %>
+  <% include ../../partials/breadcrumbs.ejs %>
+  <% include ../../partials/alerts.ejs %>
+  <% console.log(loggedin) %>
+  <div class="row top-padding bottom-padding">
+    <div style="width: 30%; margin: 25px auto;">
+      <h1 style="text-align: center">Επεξεργασία Δεδομένων</h1>
+      <form action="/account/edit?_method=PUT" method="post"
+        oninput='passwordConfirm.setCustomValidity(passwordConfirm.value != password.value ? "Passwords do not match." : "")'>
+        <div class="form-group">
+          <label for="input_first_name">Όνομα</label>
+          <input type="text" class="form-control" id="input_first_name" name="firstName" placeholder="Όνομα"
+            value="<%= currentUser.firstName %>" required>
+        </div>
+        <div class="form-group">
+          <label for="input_last_name">Επίθετο</label>
+          <input type="text" class="form-control" id="input_last_name" name="lastName" placeholder="Επίθετο"
+            value="<%= currentUser.lastName %>" required>
+        </div>
+        <div class="form-group">
+          <label for="input_telephone">Τηλέφωνο</label>
+          <input type="text" class="form-control" minlength="10" maxlength="10" id="input_telephone" name="telephone"
+            placeholder="Τηλέφωνο" value="<%= currentUser.telephone %>" required>
+        </div>
+        <div class="form-group">
+          <label for="input_afm">Α.Φ.Μ.</label>
+          <input type="text" class="form-control" minlength="9" maxlength="9" id="input_afm" name="afm"
+            placeholder="Α.Φ.Μ." value="<%= currentUser.afm %>">
+          <small id="afmHelp" class="form-text text-muted">*Για επιχειρηματίες μόνο.</small>
+        </div>
+        <div class="form-group">
+          <label for="input_email">Email</label>
+          <input type="email" class="form-control" id="input_email" name="email" placeholder="john@doe.com"
+            value="<%= currentUser.email %>" required>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="form-group">
+          <label for="input_email">Κωδικός πρόσβασης</label>
+          <input type="password" class="form-control" id="input_email" minlength="8" name="password"
+            placeholder="Κωδικός πρόσβασης" required>
+        </div>
+        <div class="form-group">
+          <label for="input_password_confirm">Επιβεβαίωση Κωδικού πρόσβασης</label>
+          <input type="password" class="form-control" id="input_password_confirm" minlength="8" name="passwordConfirm"
+            placeholder="Κωδικός πρόσβασης" required>
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Αλλαγή Δεδομένων</button>
+      </form>
+    </div>
+  </div>
+
+  <% include ../../partials/footer.ejs %>
+
+
+</body>
+
+</html>

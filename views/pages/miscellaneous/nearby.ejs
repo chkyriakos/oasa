@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../../partials/header.ejs %>
+</head>
+
+<body>
+
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/breadcrumbs.ejs %>
+    <% include ../../partials/alerts.ejs %>
+    <div class="container top-padding bottom-padding">
+        <div class="jumbotron text-white">
+            <h1 class="display-4">Κοντά μου</h1>
+        </div>
+
+        <div class="row justify-content-center">
+            <div style="text-decoration:none; overflow:hidden;max-width:100%;width:500px;height:500px;">
+                <div id="display-googlemap" style="height:100%; width:100%;max-width:100%;"><iframe
+                        style="height:100%;width:100%;border:0;" frameborder="0"
+                        src="https://www.google.com/maps/embed/v1/place?q=athens&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+                </div><a class="codefor-google-map" href="https://www.embed-map.com"
+                    id="grab-mapdata">https://www.embed-map.com</a>
+                <style>
+                    #display-googlemap img {
+                        max-width: none !important;
+                        background: none !important;
+                        font-size: inherit;
+                        font-weight: inherit;
+                    }
+                </style>
+            </div>
+        </div>
+    </div>
+
+
+    <% include ../../partials/footer.ejs %>
+
+</body>
+
+</html>

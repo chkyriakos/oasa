@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../../partials/header.ejs %>
+</head>
+
+<body>
+
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/breadcrumbs.ejs %>
+    <% include ../../partials/alerts.ejs %>
+
+    <div class="row top-padding bottom-padding">
+        <div style="width: 30%; margin: 25px auto;">
+            <h1 style="text-align: center">Φόρμα Παραπόνων</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <form action="/complains" method="post">
+                            <div class="form-group">
+                                <label for="input_first_name">Όνομα</label>
+                                <input type="text" class="form-control" id="input_first_name" name="firstName"
+                                    placeholder="Όνομα" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="input_last_name">Επίθετο</label>
+                                <input type="text" class="form-control" id="input_last_name" name="lastName"
+                                    placeholder="Επίθετο" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="input_telephone">Τηλέφωνο</label>
+                                <input type="text" class="form-control" minlength="10" maxlength="10"
+                                    id="input_telephone" name="telephone" placeholder="Τηλέφωνο">
+                            </div>
+                            <div class="form-group">
+                                <label for="input_email">Email</label>
+                                <input type="email" class="form-control" id="input_email" name="email"
+                                    placeholder="john@doe.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Γράψτε εδώ</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" name="complainBody"
+                                    rows="5"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-lg btn-primary btn-block">Αποστολή</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <% include ../../partials/footer.ejs %>
+
+
+</body>
+
+</html>

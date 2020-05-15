@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../../partials/header.ejs %>
+</head>
+
+<body>
+
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/breadcrumbs.ejs %>
+    <% include ../../partials/alerts.ejs %>
+    <div class="container top-padding bottom-padding">
+        <div class="jumbotron text-white">
+            <h1 class="display-4">Στάσεις με Προεξοχές</h1>
+            <hr class="my-4">
+            <p class="lead">Για την καλύτερη εξυπηρέτηση των επιβατών αλλά και των ΑμεΑ ο ΟΑΣΑ έχει τοποθετήσει στις παρακάτω στάσεις ειδικές προεξοχές για την ευκολότερη πρόσβαση των επιβατών στα οχήματα (Λεωφορεία και Τρόλλεϋ).</p>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <ul class="list-group">
+                    <% stops.forEach((stop) => { %>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="/stops/<%= stop.sname %>">
+                            <%= stop.sname %>
+                        </a>
+                    </li>
+                    <% }) %>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+    <% include ../../partials/footer.ejs %>
+
+</body>
+
+</html>

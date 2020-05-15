@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../../partials/header.ejs %>
+</head>
+
+<body>
+
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/breadcrumbs.ejs %>
+    <% include ../../partials/alerts.ejs %>
+    <div class="container top-padding bottom-padding">
+        <div class="jumbotron text-white">
+            <h1 class="display-4">Το παράπονο σας έχει σταλεί</h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-md-2 col-5">
+                <label style="font-weight:bold;">Όνομα</label>
+            </div>
+            <div class="col-md-8 col-6">
+                <%= complain.firstName %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-md-2 col-5">
+                <label style="font-weight:bold;">Επίθετο</label>
+            </div>
+            <div class="col-md-8 col-6">
+                <%= complain.lastName %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-md-2 col-5">
+                <label style="font-weight:bold;">Τηλέφωνο</label>
+            </div>
+            <div class="col-md-8 col-6">
+                <%= complain.telephone %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-md-2 col-5">
+                <label style="font-weight:bold;">Email</label>
+            </div>
+            <div class="col-md-8 col-6">
+                <%= complain.email %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-md-2 col-5">
+                <label style="font-weight:bold;">Παράπονο</label>
+            </div>
+            <div class="col-md-8 col-6">
+                <p style="word-break: break-all"><%= complain.complainBody %></p>
+            </div>
+        </div>
+    </div>
+
+
+    <% include ../../partials/footer.ejs %>
+
+</body>
+
+</html>

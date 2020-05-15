@@ -1,0 +1,99 @@
+<nav class="navbar navbar-light bg-light">
+  <a href="/">
+    <img src="/oasalogo.png" alt="" width="70" height="70">
+  </a>
+  <div>
+    <ul class="mr-auto">
+    </ul>
+    <form class="form-inline">
+      <input class="form-control-sm" placeholder="Αναζήτηση" aria-label="Search" size="15px" />
+      <button class="form-control-sm btn-info" type="submit">
+        <i class="fas fa-search"></i>
+      </button>
+    </form>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <ul class="navbar-nav"></ul>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Μετακίνηση
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/routes">Ημερήσια</a>
+          <a class="dropdown-item" href="/routes/24hr">24ωρά</a>
+          <a class="dropdown-item" href="/routes/airport">Αεροδρομίου</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Εισιτήρια
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/orders">Αγορά</a>
+          <a class="dropdown-item" href="/ekdotiria">Εκδοτήρια</a>
+          <a class="dropdown-item" href="/reducedfare">Μειωμένα κόμιστρα</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Προσβασιμότητα
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/accessibility">Οδηγίες για ΑμεΑ</a>
+          <a class="dropdown-item" href="/stops/accessibility">Στάσεις με προεξοχές</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Εταιρικό Προφίλ
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/history">Ιστορία</a>
+          <a class="dropdown-item" href="/business">Για Επιχειρηματίες</a>
+          <a class="dropdown-item" href="/prokirikseis">Προκυρήξεις</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Επικοινωνία<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="/help">Βοήθεια<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+
+    <ul class="nav">
+      <% if(!currentUser) { %>
+      <li class="nav-item">
+        <button type="button" class="btn btn-outline-primary">
+          <a href="/register">Εγγραφή <i class="fas fa-user-plus"></i></a>
+        </button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-outline-primary"><a href="/login">Είσοδος <i class="fas fa-user"></i></a>
+        </button>
+      </li>
+      <% } else { %>
+      <li class="nav-item">
+        <button type="button" class="btn btn-outline-secondary">
+          <a href="/logout">Αποσύνδεση<i class=""></i></a>
+        </button>
+      </li>
+      <% } %>
+    </ul>
+</nav>
+<% // if (loggedin == true) { %>
+<% //   console.log("loggedIn") %>
+<% // } else { %>
+<% //   console.log("not loggedIn") %>
+<% // } %>

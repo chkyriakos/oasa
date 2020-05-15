@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../../partials/header.ejs %>
+</head>
+
+<body>
+
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/breadcrumbs.ejs %>
+    <% include ../../partials/alerts.ejs %>
+    <div class="container top-padding bottom-padding">
+        <div class="jumbotron text-white">
+            <h1 class="display-4">Στάσεις</h1>      
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <ul class="list-group">
+                    <% stops.forEach((stop) => { %>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="/stops/<%= stop.id %>">
+                            <%= stop.sname %>
+                        </a>
+                    </li>
+                    <% }) %>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <% include ../../partials/footer.ejs %>
+
+</body>
+
+</html>

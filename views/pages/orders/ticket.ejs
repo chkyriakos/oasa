@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../../partials/header.ejs %>
+</head>
+
+<body>
+
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/breadcrumbs.ejs %>
+    <% include ../../partials/alerts.ejs %>
+    <div class="container top-padding bottom-padding">
+        <div class="jumbotron text-white">
+            <h1 class="display-4">Αγορά Εισητηρίων</h1>
+        </div>
+        <form action='/orders' method="post" id="ticketForm">
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="input_first_name">Όνομα</label>
+                        <input type="text" class="form-control" id="input_first_name" name="first_name"
+                            placeholder="Όνομα" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="input_last_name">Επίθετο</label>
+                        <input type="text" class="form-control" id="input_last_name" name="last_lame"
+                            placeholder="Επίθετο" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="input_telephone">Τηλέφωνο</label>
+                        <input type="text" class="form-control" minlength="10" maxlength="10" id="input_telephone"
+                            name="telephone" placeholder="Τηλέφωνο" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="input_email">Email</label>
+                        <input type="email" class="form-control" id="input_email" name="email"
+                            placeholder="john@doe.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="input_afm">Α.Φ.Μ.</label>
+                        <input type="text" class="form-control" minlength="9" maxlength="9" id="input_afm" name="afm"
+                            placeholder="Α.Φ.Μ.">
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                    <!-- Card holder -->
+                    <div class="form-group">
+                        <label for="username">Όνομα Κατόχου κάρτας</label>
+                        <input class="form-control" type="text" id="username" name="username"
+                            placeholder="Όνομα Κατόχου" class="input-xlarge" required>
+                    </div>
+                    <!-- Card Number -->
+                    <div class="form-group">
+                        <label for="email">Αριθμός Κάρτας</label>
+                        <input class="form-control" type="text" minlength="16" maxlength="16" id="email" name="email"
+                            placeholder="Αριθμός Κάρτας" class="input-xlarge" required>
+                    </div>
+                    <!-- CVV -->
+                    <div class="form-group">
+                        <label for="password_confirm">CVV Κάρτας</label>
+                        <input class="form-control" type="text" minlength="3" maxlength="3" id="password_confirm"
+                            name="password_confirm" placeholder="CVV" required>
+                    </div>
+                    <!-- Expiry-->
+                    <div class="form-group">
+                        <label for="password">Ημερομηνία Λήξης Κάρτας</label>
+                        <select class="form-control" name="expiry_month" id="expiry_month" required>
+                            <option></option>
+                            <option value="01">Jan (01)</option>
+                            <option value="02">Feb (02)</option>
+                            <option value="03">Mar (03)</option>
+                            <option value="04">Apr (04)</option>
+                            <option value="05">May (05)</option>
+                            <option value="06">June (06)</option>
+                            <option value="07">July (07)</option>
+                            <option value="08">Aug (08)</option>
+                            <option value="09">Sep (09)</option>
+                            <option value="10">Oct (10)</option>1
+                            <option value="11">Nov (11)</option>
+                            <option value="12">Dec (12)</option>
+                        </select>
+                        <select class="form-control" name="expiry_year" required>
+                            <option value="13">2020</option>
+                            <option value="14">2021</option>
+                            <option value="15">2022</option>
+                            <option value="16">2023</option>
+                            <option value="17">2024</option>
+                            <option value="18">2025</option>
+                        </select>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="input_first_name">Ενιαίο Εισιτήριο: 1.40</label>
+                        <input type="number" class="form-control" id="eniaio" name="eniaio"
+                            placeholder="Αριθμός Εισιτηρίων">
+                    </div>
+                    <div class="form-group">
+                        <label for="input_first_name">Ημερήσιο Εισιτήριο: 4.50</label>
+                        <input type="number" class="form-control" id="triimero" name="triimero"
+                            placeholder="Αριθμός Εισιτηρίων">
+                    </div>
+                    <div class="form-group">
+                        <label for="input_first_name">Εισιτήριο 5 Ημερών: 9.00</label>
+                        <input type="number" class="form-control" id="evdomadiaio" name="evdomadiaio"
+                            placeholder="Αριθμός Εισιτηρίων">
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label>Σύνολο: €<span name="totalCost" id="totalCost"></span></label>
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-primary btn-block">Αγορά</button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <% include ../../partials/footer.ejs %>
+
+</body>
+
+</html>

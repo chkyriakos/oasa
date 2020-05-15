@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../../partials/header.ejs %>
+</head>
+
+<body>
+
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/breadcrumbs.ejs %>
+    <% include ../../partials/alerts.ejs %>
+    <div class="container top-padding bottom-padding">
+        <div class="jumbotron text-white">
+            <h1 class="display-4">Απόδειξη αγοράς</h1>
+        </div>
+        <ul class="list-group" style="width: 30%; margin: 25px auto;">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Ενιαίο
+                <span class="badge badge-primary badge-pill"><%= order.oeniaio %></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Τριήμερο
+                <span class="badge badge-primary badge-pill"><%= order.otriimero %></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Εβδομαδιαίο
+                <span class="badge badge-primary badge-pill"><%= order.oevdomadiaio %></span>
+            </li>
+            <li class="list-group-item list-group-item-success d-flex justify-content-between align-items-center">
+                Σύνολο: 
+                <span class="badge badge-primary badge-pill">€<%= order.total %></span>
+            </li>
+        </ul>
+    </div>
+
+
+    <% include ../../partials/footer.ejs %>
+
+</body>
+
+</html>

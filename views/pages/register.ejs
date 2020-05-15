@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+  <% include ../partials/nav.ejs %>
+  <% include ../partials/breadcrumbs.ejs %>
+  <% include ../partials/alerts.ejs %>
+
+  <div class="row top-padding bottom-padding">
+    <div style="width: 30%; margin: 25px auto;">
+      <h1 style="text-align: center">Εγγραφή</h1>
+      <form action="/register" method="post"
+        oninput='passwordConfirm.setCustomValidity(passwordConfirm.value != password.value ? "Passwords do not match." : "")'>
+        <div class="form-group">
+          <label for="input_firstName">Όνομα</label>
+          <input type="text" class="form-control" id="input_firstName" name="firstName" placeholder="Όνομα" required>
+        </div>
+        <div class="form-group">
+          <label for="input_lastName">Επίθετο</label>
+          <input type="text" class="form-control" id="input_lastName" name="lastName" placeholder="Επίθετο" required>
+        </div>
+        <div class="form-group">
+          <label for="input_telephone">Τηλέφωνο</label>
+          <input type="text" class="form-control" minlength="10" maxlength="10" id="input_telephone" name="telephone"
+            placeholder="Τηλέφωνο" required>
+        </div>
+        <div class="form-group">
+          <label for="input_afm">Α.Φ.Μ.</label>
+          <input type="text" class="form-control" minlength="9" maxlength="9" id="input_afm" name="afm"
+            placeholder="Α.Φ.Μ.">
+          <small id="afmHelp" class="form-text text-muted">*Για επιχειρηματίες μόνο.</small>
+        </div>
+        <hr>
+        <div class="form-group">
+          <label for="input_email">Email</label>
+          <input type="email" class="form-control" id="input_email" name="email" placeholder="john@doe.com" required>
+        </div>
+        <div class="form-group">
+          <label for="input_email">Κωδικός πρόσβασης</label>
+          <input type="password" class="form-control" id="input_email" minlength="8" name="password"
+            placeholder="Κωδικός πρόσβασης" required>
+        </div>
+        <div class="form-group">
+          <label for="input_password_confirm">Επιβεβαίωση Κωδικού πρόσβασης</label>
+          <input type="password" class="form-control" id="input_password_confirm" minlength="8" name="passwordConfirm"
+            placeholder="Κωδικός πρόσβασης" required>
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Εγγραφή!</button>
+      </form>
+    </div>
+  </div>
+
+  <% include ../partials/footer.ejs %>
+
+
+</body>
+
+</html>
